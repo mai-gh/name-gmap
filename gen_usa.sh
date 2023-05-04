@@ -17,6 +17,6 @@ for a in ${areas[@]}; do
   mkgmap-splitter --keep-complete=true ../${a}-latest.osm.pbf
   mkgmap -c template.args --gmapsupp *.osm.pbf
   ../../name-gmap.py gmapsupp.img osm-us-${a}
-  mv gmapsupp.img ../out/osm-us-${a}.img
+  mv gmapsupp.img ../../out/osm-us-${a}.img
   cd ..
 done
