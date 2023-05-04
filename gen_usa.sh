@@ -12,7 +12,7 @@ cd work
 for a in ${areas[@]}; do 
   echo STARTING: $a
   wget -c https://download.geofabrik.de/north-america/us/${a}-latest.osm.pbf
-  mkdir $a
+  [ ! -d $a ] && mkdir $a
   cd $a
   mkgmap-splitter --keep-complete=true ../${a}-latest.osm.pbf
   mkgmap -c template.args --gmapsupp *.osm.pbf
